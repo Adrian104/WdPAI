@@ -1,0 +1,45 @@
+body
+{
+	color: #CCFFFF;
+	background-color: #030A17;
+	font-family: "IBM Plex Sans", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+nav
+{
+	background-color: #0A1833FF;
+	align-items: center;
+	height: 70px;
+	display: flex;
+}
+
+#hamburger-menu
+{
+	margin: 0px 15px 0px 7px;
+}
+
+#hamburger-menu:hover
+{
+	content: url("res/menu-hover.svg");
+}
+
+#logo
+{
+	margin-top: 3px;
+}
+
+#profile-menu
+{
+	margin-right: 10px;
+	margin-left: auto;
+}
+
+#profile-menu:hover
+{
+	content: url("res/profile-hover.svg");
+}
