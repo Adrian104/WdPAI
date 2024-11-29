@@ -8,7 +8,8 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./server.conf:/etc/nginx/conf.d/server.conf
-      - ./code:/var/www/html
+      - ./code:/etc/nginx/sites-available
+      - ./code:/etc/nginx/sites-enabled
     depends_on:
       - php
     networks:
@@ -17,7 +18,8 @@ services:
   php:
     image: php:7.4-fpm
     volumes:
-      - ./code:/var/www/html
+      - ./code:/etc/nginx/sites-available
+      - ./code:/etc/nginx/sites-enabled
     networks:
       - webnet
 
