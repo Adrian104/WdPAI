@@ -32,11 +32,6 @@ body
 	margin: 0px 15px 0px 7px;
 }
 
-#hamburger-menu:hover
-{
-	content: url("res/menu-hover.svg");
-}
-
 #logo
 {
 	margin-top: 3px;
@@ -46,11 +41,6 @@ body
 {
 	margin-right: 10px;
 	margin-left: auto;
-}
-
-#profile-menu:hover
-{
-	content: url("res/profile-hover.svg");
 }
 
 .li-span
