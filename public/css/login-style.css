@@ -1,0 +1,56 @@
+.center-menu {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.option-list a {
+	color: #CCFFFF;
+	text-decoration: none;
+	display: block;
+	margin: 5px 0;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+input {
+	margin: 0 0 10px 0;
+	padding: 8px;
+	border: none;
+	border-radius: 5px;
+}
+
+button {
+	background-color: #2962ff;
+	color: white;
+	padding: 8px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.circle {
+	position: absolute;
+	border-radius: 50%;
+}
+
+.circle.green {
+	width: 400px;
+	height: 400px;
+	top: -150px;
+	left: -150px;
+	border: 8px dashed #00c853;
+}
+
+.circle.blue {
+	width: 450px;
+	height: 450px;
+	top: -168px;
+	left: -168px;
+	border: 8px dashed #2962ff;
+}
