@@ -19,7 +19,7 @@
 			<form>
 				<input type="email" placeholder="E-Mail">
 				<input type="password" placeholder="Hasło">
-				<button class="login-btn">> Zaloguj się</button>
+				<button class="login-btn">Zaloguj się</button>
 			</form>
         </div>
 		<div class="circle green"></div>

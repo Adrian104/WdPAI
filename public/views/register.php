@@ -20,7 +20,7 @@
 				<input type="text" placeholder="Nazwa użytkownika">
 				<input type="email" placeholder="E-Mail">
 				<input type="password" placeholder="Hasło">
-				<button class="login-btn">> Zarejestruj się</button>
+				<button class="login-btn">Zarejestruj się</button>
 			</form>
         </div>
 		<div class="circle green"></div>

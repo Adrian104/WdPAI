@@ -1,5 +1,7 @@
 <?php
 
+require "src/repository/database.php";
+
 class Routing
 {
 	public function basic_route($src, $dest)
