@@ -1,6 +1,34 @@
 <?php
 
-$db = mysqli_connect("mariadb", "username", "password", "database");
-require "setup.php";
+require_once 'config.php';
+class Database
+{
+    private $host;
+    private $username;
+    private $password;
+    private $database;
+
+    public function __construct()
+    {
+        $this->username = USERNAME;
+        $this->password = PASSWORD;
+        $this->host = HOST;
+        $this->database = DATABASE;
+    }
+
+    public function connect(){
+        try {
+            $conn = new PDO(
+                "mysql:host=$this->host;dbname=$this->database;charset=UTF8",
+                $this->username,
+                $this->password
+            );
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $conn;
+        } catch (PDOException $e) {
+            die("Connection failed: " . $e->getMessage());
+        }
+    }
+}
 
 ?>

@@ -1,6 +1,5 @@
 <?php
 
-require 'database.php';
 require 'Routing.php';
 
 $path=trim($_SERVER['REQUEST_URI'], '/');
@@ -10,7 +9,6 @@ Routing::get('','DefaultController');
 Routing::get('about','DefaultController');
 Routing::get('faq','DefaultController');
 Routing::get('feed','DefaultController');
-Routing::get('login','DefaultController');
+Routing::post('login','SecurityController');
 Routing::get('register','DefaultController');
-Routing::get('login','DefaultController');
 Routing::run($path);

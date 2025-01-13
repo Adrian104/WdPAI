@@ -75,3 +75,32 @@ button {
 		border: 8px dashed #2962ff;
 	}
 }
+.message-tab{
+	position: absolute;
+	bottom: 0;
+	height: 40px;
+	padding: 5px;
+	background-color: #2962ff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.message-text{
+	min-width: 160px;
+	padding: 0 10px;
+	display: flex;
+	justify-content: center;
+}
+.message-close{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	aspect-ratio : 1 / 1;
+	height:100%;
+	text-decoration: none;
+	color: inherit;
+}
+.message-close:hover{
+	background-color: #1350fc;
+	cursor: pointer;
+}
