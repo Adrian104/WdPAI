@@ -5,29 +5,33 @@ CREATE TABLE IF NOT EXISTS user (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     nick VARCHAR(255),
     email VARCHAR(255),
-    password VARCHAR(255)
-)
-");
-
-$db->query("
-CREATE TABLE IF NOT EXISTS message (
-    message_id INT AUTO_INCREMENT PRIMARY KEY,
-	user_id INT,
-    content LONGTEXT,
-    publish_date DATETIME,
-	FOREIGN KEY (user_id) REFERENCES user(user_id)
+    password CHAR(64)
 )
 ");
 
 $db->query("
 CREATE TABLE IF NOT EXISTS thread (
     thread_id INT AUTO_INCREMENT PRIMARY KEY,
-	message_id INT,
+    user_id INT,
     title VARCHAR(255),
     tags VARCHAR(255),
     score INT,
     views INT,
-	FOREIGN KEY (message_id) REFERENCES message(message_id)
+    content LONGTEXT,
+    publish_date DATETIME,
+    FOREIGN KEY (user_id) REFERENCES user(user_id)
+)
+");
+
+$db->query("
+CREATE TABLE IF NOT EXISTS reply (
+    reply_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    thread_id INT,
+    content LONGTEXT,
+    publish_date DATETIME,
+    FOREIGN KEY (user_id) REFERENCES user(user_id),
+    FOREIGN KEY (thread_id) REFERENCES thread(thread_id)
 )
 ");
 
