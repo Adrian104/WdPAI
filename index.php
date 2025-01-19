@@ -10,5 +10,6 @@ Routing::get('about','DefaultController');
 Routing::get('faq','DefaultController');
 Routing::get('feed','DefaultController');
 Routing::post('login','SecurityController');
-Routing::get('register','DefaultController');
+Routing::post('register','SecurityController');
+
 Routing::run($path);

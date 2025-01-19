@@ -23,4 +23,15 @@ class UserRepository extends Repository
             $user['password']
         );
     }
+
+	public function setUser(string $name, string $email, string $password) {
+		$stmt = $this->database->connect()->prepare('
+			INSERT IGNORE INTO user(nick, email, password) VALUES (:nick, :email, :password)
+		');
+
+		$stmt->bindParam(':nick', $name, PDO::PARAM_STR);
+		$stmt->bindParam(':email', $email, PDO::PARAM_STR);
+		$stmt->bindParam(':password', password_hash($password, PASSWORD_DEFAULT), PDO::PARAM_STR);
+        $stmt->execute();
+	}
 }

@@ -1,5 +1,7 @@
 <?php
 
+$db = mysqli_connect("mariadb", "username", "password", "database");
+
 $db->query("
 CREATE TABLE IF NOT EXISTS user (
     user_id INT AUTO_INCREMENT PRIMARY KEY,

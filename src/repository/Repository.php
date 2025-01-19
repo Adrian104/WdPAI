@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__.'/../../Database.php';
+require_once __DIR__.'/../../database.php';
 class Repository
 {
     protected $database;
@@ -8,4 +8,8 @@ class Repository
     public function __construct(){
         $this->database = new Database();
     }
+
+	public function getDatabase(){
+		return $this->database;
+	}
 }

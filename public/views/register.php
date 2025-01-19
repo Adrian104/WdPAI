@@ -16,10 +16,10 @@
                 <img id="logo" src="/public/img/logo.svg" alt="logo">
 				<br><br><br>
             </div>
-			<form>
-				<input type="text" placeholder="Nazwa użytkownika">
-				<input type="email" placeholder="E-Mail">
-				<input type="password" placeholder="Hasło">
+			<form action="register" method="POST">
+				<input name="name" type="text" placeholder="Nazwa użytkownika">
+				<input name="email" type="email" placeholder="E-Mail">
+				<input name="password" type="password" placeholder="Hasło">
 				<button class="login-btn">Zarejestruj się</button>
 			</form>
         </div>

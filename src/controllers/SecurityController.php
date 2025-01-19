@@ -14,16 +14,29 @@ class SecurityController extends AppController
 
         $email=$_POST['email'];
         $password=$_POST['password'];
-
         $user = $userRepository->getUser($email);
 
         if (!$user){
             return $this->render('login', ['messages'=>['Użytkownik nie istnieje']]);
         }
-        if ($user->getPassword() !== $password){
+        if (!password_verify($password, $user->getPassword())){
             return $this->render('login', ['messages'=>['Podane hasło jest niepoprawne']]);
         }
 
         return $this->render('feed');
     }
+
+	public function register() {
+		$userRepository = new UserRepository();
+
+		if (!$this->isPost()){
+            return $this->render('register');
+        }
+
+		$name=$_POST['name'];
+		$email=$_POST['email'];
+        $password=$_POST['password'];
+
+		$userRepository->setUser($name, $email, $password);
+	}
 }
