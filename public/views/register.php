@@ -23,6 +23,18 @@
 				<button class="login-btn">Zarejestruj się</button>
 			</form>
         </div>
+		<?php
+        if(isset($messages)) {
+        echo '<div class="message-tab" id="message-tab-id">' ;
+            echo '<div class="message-text">';
+                foreach($messages as $message) {
+                    echo $message;
+                }
+            echo '</div>';
+            echo '<a href="javascript:close_message_tab()" class="message-close">x</a>';
+        }
+         ?>
+        </div>
 		<div class="circle green"></div>
 		<div class="circle blue"></div>
 	</body>
