@@ -31,4 +31,3 @@ RUN apk add --no-cache --virtual .run-deps $RUN_DEPS
 RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mysql
 COPY . /app
 VOLUME ["/app"]
-CMD ["php", "/app/setup.php"]

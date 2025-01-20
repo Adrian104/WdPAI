@@ -1,6 +1,7 @@
 <?php
 
 require_once 'AppController.php';
+require_once __DIR__.'/../service/FeedService.php';
 
 class DefaultController extends AppController {
 
@@ -14,7 +15,9 @@ class DefaultController extends AppController {
         $this->render('faq');
     }
     public function feed() {
-        $this->render('feed');
+        $service = new FeedService();
+        $forumThreads = $service->fetchForumThreads();
+        $this->render('feed', ['forumThreads' => $forumThreads]);
     }
     public function register() {
         $this->render('register');

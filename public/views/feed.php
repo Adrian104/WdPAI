@@ -40,5 +40,31 @@
 				</ul>
 			</nav>
 		</header>
+        <main>
+            <div class="thread-container">
+                <h1>Najnowsze dyskusje</h1>
+                <div class="thread-list">
+                    <?php foreach($forumThreads as $forumThread): ?>
+                        <hr>
+                        <div class="thread-card">
+                            <div class="thread-image">
+                                <div class="thread-image-element">
+                                    <img src="/public/img/heart.svg" alt="menu">
+                                    <?= $forumThread->getScore() ?>
+                                </div>
+                                <div class="thread-image-element">
+                                    <img src="/public/img/eye.svg" alt="menu">
+                                    <?= $forumThread->getViews() ?>
+                                </div>
+                            </div>
+                            <div class="thread-info">
+                                <a href="" class="thread-title"><?= $forumThread->getTitle() ?></a>
+                                <div class="thread-tags"><?= $forumThread->getTags() ?></div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </main>
 	</body>
 </html>

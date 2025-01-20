@@ -15,9 +15,11 @@ class RegisterController extends AppController
 		$password = $_POST['password'];
 		$service = new RegisterService();
 		$ret = $service->register($nick, $email, $password);
+        $service = new FeedService();
+        $forumThreads = $service->fetchForumThreads();
 
 		if ($ret === 'ok')
-			return $this->render('feed');
+			return $this->render('feed', ['forumThreads' => $forumThreads]);
 		else
 			return $this->render('register', ['messages'=>[$ret]]);
 	}
