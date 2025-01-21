@@ -27,10 +27,10 @@
 			<nav class="left-bar" id="left-bar-id">
 				<ul>
 					<span>Dyskusje</span>
-					<a href="/feed/new">Nowe</a>
-					<a href="/feed/popular">Popularne</a>
-					<a href="/feed/liked">Lubiane</a>
-					<a href="/feed/top">Najczęściej oglądane</a>
+					<a href="/feed?type=new">Nowe</a>
+					<a href="/feed?type=popular">Popularne</a>
+					<a href="/feed?type=liked">Lubiane</a>
+					<a href="/feed?type=top">Najczęściej oglądane</a>
 					<span>Moje dyskusje</span>
 					<a href="">Dodaj</a>
 					<a href="">Przeglądaj</a>

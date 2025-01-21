@@ -2,6 +2,7 @@
 
 class ForumThread
 {
+    private $id;
     private $user_id;
     private $title;
     private $tags;
@@ -9,8 +10,10 @@ class ForumThread
     private $views;
     private $content;
     private $publish_date;
-    public function __construct($user_id, $title, $tags, $score, $views, $content, $publish_date)
+
+    public function __construct($id, $user_id, $title, $tags, $score, $views, $content, $publish_date)
     {
+        $this->id = $id;
         $this->user_id = $user_id;
         $this->title = $title;
         $this->tags = $tags;
@@ -90,5 +93,13 @@ class ForumThread
         $this->publish_date = $publish_date;
     }
 
+    public function getId()
+    {
+        return $this->id;
+    }
 
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
 }

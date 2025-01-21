@@ -10,4 +10,12 @@ class FeedService
 
         return $ForumThreads;
     }
+
+    public function fetchForumThread($id)
+    {
+        $ForumThreadRepository = new ForumThreadRepository();
+        $ForumThread = $ForumThreadRepository->getForumThread($id);
+
+        return $ForumThread;
+    }
 }
