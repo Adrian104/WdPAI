@@ -60,13 +60,29 @@ main{
 	align-items: center;
 	flex-direction: column;
 }
-
 .thread-container{
-	width: 50%;
+	width: 90%;
+}
+@media (min-width: 900px) {
+	.thread-container{
+		width: 50%;
+	}
 }
 .thread-container h1{
 	margin-top: 60px;
+	margin-bottom: 10px;
 	font-size: 2.5em;
+}
+.thread-box {
+	background-color: #041026;
+	border-color: #CCFFFF;
+	border: 3px;
+	border-style: solid;
+	border-radius: 35px;
+	padding: 10px 50px 40px 50px;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
 }
 .thread-list hr{
 	border-color: #303e67;
@@ -90,10 +106,20 @@ main{
 	justify-content: space-evenly;
 	align-items: center;
 }
+.thread-image-element-2{
+	display: flex;
+	align-items: center;
+	font-size: 1.5em;
+}
 .thread-image-element img{
 	width: 20px;
 	height: 20px;
-	filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
+	filter: invert(0.5) sepia(1) saturate(2) hue-rotate(175deg);
+}
+.thread-image-element-2 img{
+	width: 30px;
+	height: 30px;
+	filter: invert(0.5) sepia(1) saturate(2) hue-rotate(175deg);
 }
 .thread-info{
 	padding-left: 20px;

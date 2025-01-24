@@ -27,10 +27,10 @@
 			<nav class="left-bar" id="left-bar-id">
 				<ul>
 					<span>Dyskusje</span>
-					<a href="/feed?type=new">Nowe</a>
-					<a href="/feed?type=popular">Popularne</a>
-					<a href="/feed?type=liked">Lubiane</a>
-					<a href="/feed?type=top">Najczęściej oglądane</a>
+					<a href="/feed/new">Nowe</a>
+					<a href="/feed/popular">Popularne</a>
+					<a href="/feed/liked">Lubiane</a>
+					<a href="/feed/top">Najczęściej oglądane</a>
 					<span>Moje dyskusje</span>
 					<a href="">Dodaj</a>
 					<a href="">Przeglądaj</a>
@@ -41,30 +41,27 @@
 			</nav>
 		</header>
         <main>
-            <div class="thread-container">
-                <h1>Najnowsze dyskusje</h1>
-                <div class="thread-list">
-                    <?php foreach($forumThreads as $forumThread): ?>
-                        <hr>
-                        <div class="thread-card">
-                            <div class="thread-image">
-                                <div class="thread-image-element">
-                                    <img src="/public/img/heart.svg" alt="menu">
-                                    <?= $forumThread->getScore() ?>
-                                </div>
-                                <div class="thread-image-element">
-                                    <img src="/public/img/eye.svg" alt="menu">
-                                    <?= $forumThread->getViews() ?>
-                                </div>
-                            </div>
-                            <div class="thread-info">
-								<a href="/thread?id=<?= $forumThread->getId() ?>" class="thread-title"><?= $forumThread->getTitle() ?></a>
-                                <div class="thread-tags"><?= $forumThread->getTags() ?></div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            </div>
+			<div class="thread-container">
+				<h1 style="margin-left: 20px"><?= $forumThread->getTitle() ?></h1>
+				<div class="thread-image-element-2" style="margin: 0px 20px">
+					<img src="/public/img/heart.svg" alt="menu">
+					<span style="margin: 0px 3px;"></span>
+					<?= $forumThread->getScore() ?>
+					<span style="margin: 0px 10px;"></span>
+					<img src="/public/img/eye.svg" alt="menu">
+					<span style="margin: 0px 3px;"></span>
+					<?= $forumThread->getViews() ?>
+					<span style="margin-left: auto;"><?= $forumThread->getTags() ?>
+				</div>
+				<br><br>
+				<div class="thread-box">
+					<div style="display: flex; center; align-items: center;">
+						<img src="/public/img/profile2.svg" style="margin: 10px 0px;">
+						<span>Lorem Ipsum</span>
+					</div>
+					<p style="margin: 0px;"><?= $forumThread->getContent() ?></p>
+				</div>
+			</div>
         </main>
 	</body>
 </html>

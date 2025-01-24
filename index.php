@@ -11,6 +11,7 @@ Routing::get('','DefaultController');
 Routing::get('about','DefaultController');
 Routing::get('faq','DefaultController');
 Routing::get('feed','DefaultController');
+Routing::get('thread', 'DefaultController');
 Routing::post('login','LoginController');
 Routing::post('register','RegisterController');
 

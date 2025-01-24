@@ -25,4 +25,12 @@ class DefaultController extends AppController {
     public function error() {
         $this->render('error');
     }
+    public function thread() {
+        if (isset($_GET['id']))
+            $threadId = $_GET['id'];
+
+        $service = new FeedService();
+        $forumThread = $service->fetchForumThread($threadId);
+        $this->render('thread', ['forumThread' => $forumThread]);
+    }
 }
