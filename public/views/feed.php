@@ -42,7 +42,7 @@
 		</header>
         <main>
             <div class="thread-container">
-                <h1>Najnowsze dyskusje</h1>
+                <h1><?= $title ?></h1>
                 <div class="thread-list">
                     <?php foreach($forumThreads as $forumThread): ?>
                         <hr>

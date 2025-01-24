@@ -3,6 +3,25 @@
 require_once __DIR__.'/../repository/ForumThreadRepository.php';
 class FeedService
 {
+    public function getTitle()
+    {
+        if (isset($_GET['type']))
+        {
+            if ($_GET['type'] === 'new')
+                $title = "Najnowsze dyskusje";
+            else if ($_GET['type'] === 'popular')
+                $title = "Najbardziej popularne";
+            else if ($_GET['type'] === 'liked')
+                $title = "Najbardziej lubiane";
+            else if ($_GET['type'] === 'top')
+                $title = "Najpopularniejsze";
+        }
+        else
+            $title = "Najnowsze dyskusje";
+
+        return $title;
+    }
+
     public function fetchForumThreads(): array
     {
         $ForumThreadRepository = new ForumThreadRepository();

@@ -16,8 +16,9 @@ class DefaultController extends AppController {
     }
     public function feed() {
         $service = new FeedService();
+        $title = $service->getTitle();
         $forumThreads = $service->fetchForumThreads();
-        $this->render('feed', ['forumThreads' => $forumThreads]);
+        $this->render('feed', ['forumThreads' => $forumThreads, 'title' => $title]);
     }
     public function register() {
         $this->render('register');
