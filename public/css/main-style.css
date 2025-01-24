@@ -131,3 +131,7 @@ main{
 .thread-tags{
 	font-size: 1em;
 }
+.publish-date {
+	color: #667f7f;
+	margin: 0px 0px 0px 15px;
+}

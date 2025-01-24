@@ -57,7 +57,8 @@
 				<div class="thread-box">
 					<div style="display: flex; center; align-items: center;">
 						<img src="/public/img/profile2.svg" style="margin: 10px 0px;">
-						<span>Lorem Ipsum</span>
+						<span><?= $user->getNick() ?></span>
+						<span class="publish-date"><?= $forumThread->getPublishDate() ?></span>
 					</div>
 					<p style="margin: 0px;"><?= $forumThread->getContent() ?></p>
 				</div>

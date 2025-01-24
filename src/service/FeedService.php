@@ -1,6 +1,8 @@
 <?php
 
 require_once __DIR__.'/../repository/ForumThreadRepository.php';
+require_once __DIR__.'/../repository/UserRepository.php';
+
 class FeedService
 {
     public function getTitle()
@@ -36,5 +38,13 @@ class FeedService
         $ForumThread = $ForumThreadRepository->getForumThread($id);
 
         return $ForumThread;
+    }
+
+    public function fetchUser($id)
+    {
+        $userRepo = new UserRepository();
+        $user = $userRepo->getUserById($id);
+
+        return $user;
     }
 }
