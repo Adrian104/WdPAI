@@ -33,6 +33,8 @@ class DefaultController extends AppController {
         $service = new FeedService();
         $forumThread = $service->fetchForumThread($threadId);
         $user = $service->fetchUser($forumThread->getUserId());
-        $this->render('thread', ['forumThread' => $forumThread, 'user' => $user]);
+        $replies = $service->fetchReplies($threadId);
+
+        $this->render('thread', ['forumThread' => $forumThread, 'user' => $user, 'replies' => $replies]);
     }
 }

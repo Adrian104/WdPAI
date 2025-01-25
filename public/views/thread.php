@@ -62,6 +62,17 @@
 					</div>
 					<p style="margin: 0px;"><?= $forumThread->getContent() ?></p>
 				</div>
+				<br>
+				<?php foreach($replies as $reply): ?>
+					<br>
+					<div class="reply-box">
+						<div style="display: flex; center; align-items: center;">
+							<img src="/public/img/profile2.svg" style="margin: 10px 0px;">
+							<span><?= $reply->getUser() ?></span>
+						</div>
+						<p style="margin: 0px;"><?= $reply->getContent() ?></p>
+					</div>
+				<?php endforeach; ?>
 			</div>
         </main>
 	</body>

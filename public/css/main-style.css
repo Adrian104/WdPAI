@@ -84,6 +84,12 @@ main{
 	margin-left: auto;
 	margin-right: auto;
 }
+.reply-box {
+	margin: 10px 50px 40px 20px;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
 .thread-list hr{
 	border-color: #303e67;
 }

@@ -47,4 +47,12 @@ class FeedService
 
         return $user;
     }
+
+    public function fetchReplies($id)
+    {
+        $repo = new ForumThreadRepository();
+        $replies = $repo->getReplies($id);
+
+        return $replies;
+    }
 }

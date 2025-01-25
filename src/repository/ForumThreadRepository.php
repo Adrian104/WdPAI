@@ -2,6 +2,8 @@
 
 require_once 'Repository.php';
 require_once __DIR__.'/../models/ForumThread.php';
+require_once __DIR__.'/../models/Reply.php';
+
 class ForumThreadRepository extends Repository
 {
     public function getForumThreads(): array
@@ -47,6 +49,36 @@ class ForumThreadRepository extends Repository
             $forumThread['content'],
             $forumThread['publish_date']
         );
+
+        return $result;
+    }
+
+    public function getReplies($id)
+    {
+        $result = [];
+
+        $stmt = $this->connect()->prepare('
+            SELECT * FROM reply WHERE thread_id = :id;
+        ');
+        $stmt->execute(['id' => $id]);
+        $replies = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($replies as $reply) {
+            $stmt = $this->connect()->prepare('
+                SELECT * FROM user WHERE user_id = :id;
+            ');
+
+            $stmt->execute(['id' => $reply['user_id']]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $result[] = new Reply(
+                $reply['reply_id'],
+                $reply['user_id'],
+                $user['nick'],
+                $reply['thread_id'],
+                $reply['content']
+            );
+        }
 
         return $result;
     }
