@@ -42,40 +42,14 @@
 		</header>
         <main>
 			<div class="thread-container">
-				<h1 style="margin-left: 20px"><?= $forumThread->getTitle() ?></h1>
-				<div class="thread-image-element-2" style="margin: 0px 20px">
-					<img src="/public/img/heart.svg" alt="menu">
-					<span style="margin: 0px 3px;"></span>
-					<?= $forumThread->getScore() ?>
-					<span style="margin: 0px 10px;"></span>
-					<img src="/public/img/eye.svg" alt="menu">
-					<span style="margin: 0px 3px;"></span>
-					<?= $forumThread->getViews() ?>
-					<span style="margin-left: auto;"><?= $forumThread->getTags() ?>
+				<h1>Dodaj odpowiedź</h1>
+				<div style="width: 100%; display: flex; justify-content: center; margin-top: 20px;">
+					<form action="/public/views/add-reply.php?id=<?= $threadId ?>" method="POST" style="display: flex; flex-direction: column; width: 100%;">
+						<textarea name="data-in" class="data-in"></textarea>
+						<button class="add-reply" type="submit" style="margin-bottom: 10px;">Dodaj odpowiedź</button>
+						<button class="cancel-reply" type="button" onclick="window.history.back();">Anuluj</button>
+					</form>
 				</div>
-				<br><br>
-				<div class="thread-box">
-					<div style="display: flex; center; align-items: center;">
-						<img src="/public/img/profile2.svg" style="margin: 10px 0px;">
-						<span><?= $user->getNick() ?></span>
-						<span class="publish-date"><?= $forumThread->getPublishDate() ?></span>
-					</div>
-					<p style="margin: 0px;"><?= $forumThread->getContent() ?></p>
-				</div>
-				<br>
-				<?php foreach($replies as $reply): ?>
-					<br>
-					<div class="reply-box">
-						<div style="display: flex; center; align-items: center;">
-							<img src="/public/img/profile2.svg" style="margin: 10px 0px;">
-							<span><?= $reply->getUser() ?></span>
-						</div>
-						<p style="margin: 0px;"><?= $reply->getContent() ?></p>
-					</div>
-				<?php endforeach; ?>
-				<br><br><br>
-				<a style="text-decoration: none;" href="/reply?id=<?= $forumThread->getId() ?>" class="reply-btn">Dodaj odpowiedź</a>
-				<br><br><br><br><br><br>
 			</div>
         </main>
 	</body>

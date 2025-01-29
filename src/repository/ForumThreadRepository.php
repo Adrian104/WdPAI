@@ -82,4 +82,15 @@ class ForumThreadRepository extends Repository
 
         return $result;
     }
+
+    public function addReply($threadId, $content)
+    {
+        $stmt = $this->connect()->prepare('
+            INSERT INTO reply (user_id, thread_id, content) VALUES
+            (:u, :t, :c)
+        ');
+
+        session_start();
+        $stmt->execute(['u' => $_SESSION['uid'], 't' => $threadId, 'c' => $content]);
+    }
 }

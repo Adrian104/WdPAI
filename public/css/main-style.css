@@ -85,7 +85,7 @@ main{
 	margin-right: auto;
 }
 .reply-box {
-	margin: 10px 50px 40px 20px;
+	margin: 10px 50px 10px 20px;
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
@@ -140,4 +140,53 @@ main{
 .publish-date {
 	color: #667f7f;
 	margin: 0px 0px 0px 15px;
+}
+.reply-btn {
+	margin: 10px 0px 100px 40px;
+	background-color: #16368f;
+	font-size: 1.25em;
+	color: white;
+	padding: 8px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.thread-container form {
+	flex-direction: column;
+}
+.data-in {
+	width: 100%;
+	height: 300px;
+	box-sizing: border-box;
+	margin-bottom: 30px;
+	padding: 10px;
+	text-align: left;
+	background-color: #06183a;
+	border: none;
+	font-size: 1.5em;
+	color: #CCFFFF;
+}
+.add-reply {
+	width: 200px;
+	height: 40px;
+	margin: 10px 0px 10px 0px;
+	background-color: #1d4ac7;
+	font-size: 1.25em;
+	color: white;
+	padding: 8px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.cancel-reply {
+	width: 200px;
+	height: 40px;
+	margin: 10px 0px 10px 0px;
+	background-color: #102868;
+	font-size: 1.25em;
+	color: white;
+	padding: 8px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
 }

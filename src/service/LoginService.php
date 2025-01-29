@@ -16,6 +16,8 @@ class LoginService
             return 'Podane hasło jest niepoprawne';
         }
 
+		session_start();
+		$_SESSION['uid'] = $userRepository->getUserId($email);
 		return 'ok';
 	}
 }

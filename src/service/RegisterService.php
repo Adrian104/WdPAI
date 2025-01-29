@@ -13,6 +13,8 @@ class RegisterService
 			return 'Użytkownik o podanym adresie e-mail już istnieje';
 
 		$user = $userRepository->setUser($nick, $email, $hash);
+		session_start();
+		$_SESSION['uid'] = $userRepository->getUserId($email);
 		return 'ok';
 	}
 }

@@ -37,4 +37,10 @@ class DefaultController extends AppController {
 
         $this->render('thread', ['forumThread' => $forumThread, 'user' => $user, 'replies' => $replies]);
     }
+    public function reply() {
+        if (isset($_GET['id']))
+            $threadId = $_GET['id'];
+
+        $this->render('reply', ['threadId' => $threadId]);
+    }
 }

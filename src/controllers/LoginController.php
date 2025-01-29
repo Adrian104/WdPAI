@@ -19,7 +19,7 @@ class LoginController extends AppController
         $forumThreads = $service->fetchForumThreads();
 
 		if ($ret === 'ok')
-			return $this->render('feed', ['forumThreads' => $forumThreads]);
+			return $this->render('feed', ['forumThreads' => $forumThreads, 'title' => 'Najnowsze dyskusje']);
 		else
 			return $this->render('login', ['messages'=>[$ret]]);
 	}
