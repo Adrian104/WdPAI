@@ -5,6 +5,8 @@ const USERNAME = 'username';
 const PASSWORD = 'password';
 const DATABASE = 'database';
 
+require_once 'Init.php';
+
 class Repository
 {
 	private $host;
