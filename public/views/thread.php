@@ -77,6 +77,7 @@
 				<a style="text-decoration: none;" href="/reply?id=<?= $forumThread->getId() ?>" class="reply-btn">Dodaj odpowiedź</a>
 				<br><br><br><br><br><br>
 			</div>
+			<div class="gradient"></div>
         </main>
 	</body>
 </html>

@@ -65,6 +65,7 @@
                     <?php endforeach; ?>
                 </div>
             </div>
+			<div class="gradient"></div>
         </main>
 	</body>
 </html>
